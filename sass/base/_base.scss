@@ -1,0 +1,25 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+
+  /* Setting a global inheritance to all elements for box-sizing */
+  box-sizing: inherit;
+}
+
+/* Used to help determine rem by dividing by 10 */
+/* html {
+  font-size: 10px;
+} */
+
+/* 10px (desired) divided by 16px which is default browser size */
+// This defines what 1rem is
+html {
+  font-size: 62.5%;
+}
+
+body {
+  /* All elements now get border-box style by inheritance */
+  box-sizing: border-box;
+}

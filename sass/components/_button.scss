@@ -1,0 +1,69 @@
+/* Pseudoclasses of link and visited */
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    font-size: 1.6rem;
+
+    /* This is for the ::after pseudo element's positioning */
+    position: relative;
+  }
+
+  &:hover {
+    /* Shadow on x-axis, y-axis, blur, and color including opacity */
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+    /* Button click effect */
+    transform: translateY(-3px);
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    /* Shadow on x-axis, y-axis, blur, and color including opacity */
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+
+    /* Button click effect */
+    transform: translateY(-1px);
+  }
+
+  &::after {
+    /* Content and display are always required */
+    /* This pseudo element will be treated like a child of the btn element */
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &--animated {
+    /* Animation, duration, style, delay */
+    animation: moveInBottom 0.5s ease-out 0.75s;
+
+    /* Applies keyframe 0% at beginning of animation */
+    animation-fill-mode: backwards;
+  }
+}

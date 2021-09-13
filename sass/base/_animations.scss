@@ -1,0 +1,53 @@
+/* Browsers are optimized for opacity/transform animations */
+
+/* Name the animation */
+@keyframes moveInLeft {
+  /* Start */
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  /* Finish */
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Name the animation */
+@keyframes moveInRight {
+  /* Start */
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  /* Finish */
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInBottom {
+  /* Start */
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  /* Finish */
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
